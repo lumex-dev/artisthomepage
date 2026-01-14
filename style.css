@@ -24,8 +24,8 @@ h2,
 
 h1 {
   font-size: 24px;
-  padding-top: 18px;
-  padding-bottom: 12px;
+  padding-top: 32px;
+  padding-bottom: 24px;
 }
 
 img {
@@ -425,7 +425,7 @@ a:hover {
 }
 
 @media (max-width: 900px) {
-  body {
+  .page {
     grid-template-columns: 1fr;
     grid-template-areas:
       "navigation"
@@ -438,6 +438,16 @@ a:hover {
 }
 
 @media (max-width: 480px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navigation"
+      "mainContainer"
+      "footer";
+  }
+  .sidebar {
+    display: none;
+  }
   .menuIcon {
     display: block;
   }
