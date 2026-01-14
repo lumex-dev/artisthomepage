@@ -13,6 +13,7 @@ body {
   /* max-width: 1920px; */
   display: flex;
   justify-content: center;
+  padding: 12px;
 }
 
 h1,
@@ -133,7 +134,7 @@ a:visited {
   grid-area: sidebar;
   align-content: center;
   position: sticky;
-  top: 720px; /* Höhe deiner fixed Navigation */
+  top: 0px;
   /* align-self: start; */
   padding: 12px;
 }
@@ -312,7 +313,7 @@ a:hover {
 }
 .timelineScroll {
   position: relative;
-  max-height: calc(100vh - 400px); /* Header + nav einrechnen */
+  max-height: calc(100vh - 200px); /* Header + nav einrechnen */
   overflow-y: auto;
   overflow-x: hidden;
   /* padding-left: 16px; */
@@ -481,4 +482,9 @@ a:hover {
   .projectsContainer {
     grid-template-columns: 1fr;
   }
+}
+
+/*Beta*/
+.navigation {
+  display: none;
 }
