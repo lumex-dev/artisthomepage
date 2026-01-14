@@ -29,6 +29,11 @@ h1 {
   padding-bottom: 24px;
 }
 
+h2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 img {
   max-width: 900px;
   filter: brightness(0.8) contrast(1.2);
@@ -90,10 +95,64 @@ a:visited {
 /*Debug*/
 
 /*Main Outline*/
+
+:root {
+  --ticker-speed: 12s; /* kleiner = schneller */
+}
+
+.bannerContainer {
+  display: flex;
+  align-items: center;
+  grid-area: banner;
+  overflow: hidden;
+  /* justify-self: center; */
+  width: 100%;
+}
+.bannerContainer img {
+  max-height: 80px;
+}
+.topBanner {
+  display: block;
+  /* width: 85%; */
+  /* padding: 10px 16px; */
+}
+
+.ticker {
+  display: block;
+  /* width: 95%; */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tickerTrack {
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
+  will-change: transform;
+  animation: ticker var(--ticker-speed) linear infinite;
+}
+
+.tickerItem {
+  display: inline-block;
+  font-size: 24px;
+  color: var(--soundcloud);
+  padding-right: 48px; /* Abstand zwischen Wiederholungen */
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
 .page {
   display: grid;
   grid-template-areas:
     "navigation navigation"
+    "banner banner"
     "mainContainer sidebar"
     "footer footer";
   grid-template-columns: 1fr minmax(240px, 360px);
@@ -136,7 +195,7 @@ a:visited {
   position: sticky;
   top: 0px;
   /* align-self: start; */
-  padding: 12px;
+  /* padding: 12px; */
 }
 
 .footer {
@@ -183,6 +242,10 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.referenceList {
+  list-style-type: none;
+  color: var(--color-black-elevation-56);
+}
 /*MainContent*/
 .mainContainer {
   margin-top: 48px;
@@ -313,7 +376,7 @@ a:hover {
 }
 .timelineScroll {
   position: relative;
-  max-height: calc(100vh - 200px); /* Header + nav einrechnen */
+  max-height: calc(100vh - 400px); /* Header + nav einrechnen */
   overflow-y: auto;
   overflow-x: hidden;
   /* padding-left: 16px; */
@@ -346,7 +409,7 @@ a:hover {
 
 .timeline-item {
   position: relative;
-  padding: 18px 0 24px 16px;
+  padding: 18px 0 18px 16px;
   display: flex;
   flex-direction: column;
   gap: 6px;

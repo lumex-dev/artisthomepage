@@ -9,7 +9,7 @@ burger.addEventListener("click", () => {
 // ====== 1) Daten: nur Datum + Ort/Titel + optional SoundCloud href ======
 const gigs = [
     { date: "2026-02-07", title: "Palais München" },
-    { date: "2026-01-24", title: "Korajo Winter Afterall" },
+    { date: "2026-01-24", title: "Korajo Winter Afterall, München" },
     { date: "2026-01-23", title: "Zur Gruam, München" },
 
     { date: "2025-10-03", title: "Bahnwärther Thiel" },
@@ -38,6 +38,8 @@ const gigs = [
 // ====== 2) Helpers ======
 const MONTHS_DE = ["Jan", "Feb", "Mrz", "Apr", "Mai", "Jun", "Jul", "Aug", "Sept", "Okt", "Nov", "Dez"];
 
+const MONTHS_ENG = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 function toDate(dateStr) {
     const d = new Date(dateStr + "T00:00:00");
     d.setHours(0, 0, 0, 0);
@@ -57,7 +59,7 @@ function getYear(dateStr) {
 function formatLabel(dateStr, isFutureOrNext) {
     const d = toDate(dateStr);
     const day = String(d.getDate()).padStart(2, "0");
-    const month = MONTHS_DE[d.getMonth()];
+    const month = MONTHS_ENG[d.getMonth()];
     const year = d.getFullYear();
 
     if (isFutureOrNext) return `${day}. ${month} ${year}`;
@@ -99,17 +101,17 @@ function computeClasses(sortedItems) {
 
 // ====== 4) Sortierung fürs Rendern: Future/Next oben, Past unten ======
 function sortForRender(itemsWithKind) {
-    const future = itemsWithKind
-        .filter((g) => g.kind === "future")
-        .sort((a, b) => toDate(a.date) - toDate(b.date));
-
     const next = itemsWithKind
         .filter((g) => g.kind === "next")
-        .sort((a, b) => toDate(a.date) - toDate(b.date));
+        .sort((a, b) => toDate(a.date) - toDate(b.date)); // theoretisch nur 1 element
+
+    const future = itemsWithKind
+        .filter((g) => g.kind === "future")
+        .sort((a, b) => toDate(b.date) - toDate(a.date)); // wichtig: absteigend (fernste zuerst)
 
     const past = itemsWithKind
         .filter((g) => g.kind === "past")
-        .sort((a, b) => toDate(b.date) - toDate(a.date));
+        .sort((a, b) => toDate(b.date) - toDate(a.date)); // neuestes zuerst
 
     return [...future, ...next, ...past];
 }
