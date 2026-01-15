@@ -1,10 +1,34 @@
 const burger = document.querySelector(".menuIcon");
 const navList = document.querySelector(".navList");
+const timelineButton = document.getElementById("timelineButton")
+const backdrop = document.getElementById("timelineBackdrop");
 
 burger.addEventListener("click", () => {
     const isOpen = navList.classList.toggle("open");
     burger.setAttribute("aria-expanded", isOpen);
 });
+
+
+function toggleTimeline() {
+    document.body.classList.toggle("timelineOpen");
+    timelineButton.classList.toggle("open");
+    document.documentElement.classList.toggle("timeline-open"); // html
+    document.body.classList.toggle("timeline-open");            // body
+}
+
+function closeTimeline() {
+    document.body.classList.remove("timelineOpen");
+    timelineButton.classList.remove("open");
+}
+
+timelineButton.addEventListener("click", toggleTimeline);
+backdrop.addEventListener("click", closeTimeline);
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeTimeline();
+});
+
+
 
 // ====== 1) Daten: nur Datum + Ort/Titel + optional SoundCloud href ======
 const gigs = [

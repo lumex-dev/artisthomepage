@@ -11,6 +11,12 @@
 
 <body>
     <div class="page">
+        <div class="timelineButton icon" id="timelineButton">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path
+                    d="M580-240q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z" />
+            </svg>
+        </div>
         <div class="bannerContainer">
             <!-- <img src="./Ressources/Pictures/schiff2.png" />
             <a class="topBanner" href="https://soundcloud.com/moritzminoa/oniva-b2b-moritz-minoa-bucht-der-traumer-2025"
@@ -36,7 +42,7 @@
                 <li><a href="./subpages/about/">About</a></li>
                 <li><a href="./subpages/djing/">DJing</a></li>
                 <li><a href="./subpages/production/">Production</a></li>
-                <li><a href="./subpages/live/">Gigs & Live</a></li>
+                <li><a href="./subpages/live/">Gigs & Releases</a></li>
             </ul>
         </nav>
         <main class="mainContainer">
@@ -55,7 +61,7 @@
                             <li><span>Current status</span><span>Working full-time on creative and technical
                                     projects</span></li>
                             <li><span>Projects</span><span>Music production, jazz guitar studies, vocal development
-                                    (singing), software programming</span></li>
+                                    (singing), software developmnt of mental health app</span></li>
 
                             <li><span>Music in my life</span><span>A lifelong companion</span></li>
                             <li><span>Guitar</span><span>Playing since 2003</span></li>
@@ -703,6 +709,7 @@
                                 production of
                                 professional tracks across different genres catches me like crazy.
                                 I’m strongly motivated by curiosity and the long-term process of shaping my own sound.
+                                <br><br>
                                 At the moment, my main focus is on progressive techno.
                                 Below are selected releases that reflect different genres, skill levels, and stages of
                                 my artistic development.
@@ -714,7 +721,7 @@
                                         <div class="soundcloudOnline">
                                             <a href="https://soundcloud.com/moritzminoa/simultaneous-vibe-1?in=moritzminoa/sets/own-tracks&si=f8092f51eea341e882c894a0b071a9a2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
                                                 target="_blank" rel="noopener noreferrer">Simultaneous
-                                                Vibe</a>
+                                                Vibe (May 2025)</a>
                                             <svg class="icon soundcloudIcon" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                                 <path
@@ -729,7 +736,7 @@
                                         <h3>Techno</h3>
                                         <div class="soundcloudOnline">
                                             <a href="https://soundcloud.com/moritzminoa/moritz-minoa-awaken?in=moritzminoa/sets/own-tracks&si=ec07e267c6904db490d7d607da5d774a&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-                                                target="_blank" rel="noopener noreferrer">Awaken</a>
+                                                target="_blank" rel="noopener noreferrer">Awaken (Oct 2025)</a>
                                             <svg class="icon soundcloudIcon" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                                 <path
@@ -739,7 +746,7 @@
 
                                         <div class="soundcloudOnline">
                                             <a href="https://soundcloud.com/moritzminoa/moritz-minoa-time?in=moritzminoa/sets/own-tracks&si=519a63ec6b3d4b4eb72771e735dd0461&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-                                                target="_blank" rel="noopener noreferrer">Time</a>
+                                                target="_blank" rel="noopener noreferrer">Time (Oct 2025)</a>
                                             <svg class="icon soundcloudIcon" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                                 <path
@@ -761,7 +768,9 @@
                             <div class="projectText">I have been playing guitar since my youth. I started with metal,
                                 which still influences my music today through energy, tight riffs, and strong dynamics.
                                 Over time, I moved toward more atmospheric and spacious sounds, inspired by artists like
-                                Pink Floyd. <br>Today, I study jazz guitar to deeply understand music theory and bring
+                                Pink Floyd.
+                                <br>
+                                <br>Today, I study jazz guitar to deeply understand music theory and bring
                                 warm,
                                 analog guitar textures into my live sets and productions.
                             </div>
@@ -807,7 +816,7 @@
                 </div>
             </section>
         </main>
-        <aside class="sidebar">
+        <aside class="sidebar" id="mobileTimelinePanel">
             <div class="sidebarHeader">
                 <h2>Gigs & Releases</h2>
             </div>
@@ -843,8 +852,8 @@
                         <li>Pandora Festival, Kiel</li>
                     </ul>
                 </div>
-
         </aside>
+        <div class="timelineBackdrop" id="timelineBackdrop" aria-hidden="true"></div>
         <footer class="footer">
             <h1>Contact</h1>
             <div class="footerIcons">
