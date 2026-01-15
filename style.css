@@ -300,10 +300,32 @@ a:hover,
   box-shadow: 0 10px 30px var(--color-black-mid-opacity),
     0 2px 10px var(--color-black-low-opacity);
 
-  list-style-type: none;
+
   line-height: 20px;
 }
 
+.statsGrid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(48px, 100px) 1fr;
+  align-items: center;
+  gap: 8px 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.statsGrid li {
+  display: contents; /* wichtig: erlaubt echtes Tabellengefühl */
+}
+
+.statsGrid span:first-child {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.statsGrid span:last-child {
+  line-height: 1.5;
+}
 
 
 .aboutIcons {
