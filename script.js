@@ -8,6 +8,8 @@ burger.addEventListener("click", () => {
 
 // ====== 1) Daten: nur Datum + Ort/Titel + optional SoundCloud href ======
 const gigs = [
+    { date: "2026-09-26", title: "Private Hochzeit" },
+    { date: "2026-06-13", title: "Private Hochzeit" },
     { date: "2026-02-07", title: "Palais München" },
     { date: "2026-01-24", title: "Korajo Winter Afterall, München" },
     { date: "2026-01-23", title: "Zur Gruam, München" },
