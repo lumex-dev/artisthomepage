@@ -77,7 +77,12 @@ a:visited {
 
   --color-text-main: rgba(255, 255, 255, 0.8); /*checked*/
   --color-icon-fill: rgba(255, 255, 255, 0.8);
-  --color-accent: rgba(255, 186, 8, 0.8);
+  --color-accent: rgb(64, 201, 162);
+    --color-accent-02: rgb(64, 201, 162,0.2);
+  --color-accent-nice2:rgb(204, 75, 194);
+  --color-accent-nice: rgb(221, 94, 152);
+  --color-accent-old: rgba(255, 186, 8, 0.8);
+  --color-accent-02-old: rgba(255, 186, 8, 0.2);
   --color-accent-hover: #7a7265;
 
   --color-border-subtle: rgba(255, 255, 255, 0.12);
@@ -285,6 +290,7 @@ a:hover,
   bottom: 8px;
   text-align: right;
 
+      color: var(--color-accent);
   font-size: 48px;
   text-shadow: 0 4px 16px var(--color-black-elevation-0);
 }
@@ -428,6 +434,9 @@ a:hover,
 }
 
 .timelineBackdrop {
+  display: none;
+}
+.timelineButton {
   display: none;
 }
 
@@ -602,6 +611,7 @@ a:hover,
   }
 
   .timelineButton {
+    display: block;
     position: fixed;        /* statt sticky */
     right: 16px;
     bottom: 16px;
@@ -609,8 +619,8 @@ a:hover,
     z-index: 1001;
     padding: 12px;
     border-radius: 999px;
-    background: var(--color-black-elevation-1);
-    border: 1px solid var(--color-border-subtle);
+    background: var(--color-accent-02);
+    border: 1px solid var(--color-accent);
     box-sizing: unset;
   }
 
@@ -701,6 +711,7 @@ a:hover,
   .aboutName {
     width: 150px;
     font-size: 36px;
+
   }
   .aboutTextContainer h1 {
     text-align: center;
