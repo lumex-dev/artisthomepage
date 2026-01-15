@@ -12,8 +12,7 @@ burger.addEventListener("click", () => {
 function toggleTimeline() {
     document.body.classList.toggle("timelineOpen");
     timelineButton.classList.toggle("open");
-    document.documentElement.classList.toggle("timeline-open"); // html
-    document.body.classList.toggle("timeline-open");            // body
+    document.documentElement.classList.toggle("timelineOpen"); // html
 }
 
 function closeTimeline() {

@@ -76,7 +76,7 @@ a:visited {
   --color-white: rgba(255, 255, 255, 0.87); /*checked*/
 
   --color-text-main: rgba(255, 255, 255, 0.8); /*checked*/
-  --color-icon-fill: #efefef; /*checked*/
+  --color-icon-fill: rgba(255, 255, 255, 0.8);
   --color-accent: rgba(255, 186, 8, 0.8);
   --color-accent-hover: #7a7265;
 
@@ -157,6 +157,9 @@ a:visited {
 
 .page {
   display: grid;
+  /* position: relative;
+  margin: 0 auto;
+  max-width: 1200px; */
   grid-template-areas:
     "navigation navigation"
     "banner banner"
@@ -212,7 +215,7 @@ a:visited {
 
 /*Icons*/
 .icon {
-  fill: var(--color-icon-fill);
+  fill: var(--color-text-main);
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -462,18 +465,6 @@ a:hover,
   vertical-align: -0.18em;
 }
 
-.timelineButton {
-    position: fixed;        /* statt sticky */
-    right: 16px;
-    bottom: 16px;
-    top: auto;
-    z-index: 1001;
-    padding: 12px;
-    border-radius: 999px;
-    background: var(--color-black-elevation-1);
-    border: 1px solid var(--color-border-subtle);
-  }
-
 .timelineScroll {
   position: relative;
   max-height: calc(100vh - 400px); /* Header + nav einrechnen */
@@ -610,7 +601,22 @@ a:hover,
       "footer";
   }
 
+  .timelineButton {
+    position: fixed;        /* statt sticky */
+    right: 16px;
+    bottom: 16px;
+    top: auto;
+    z-index: 1001;
+    padding: 12px;
+    border-radius: 999px;
+    background: var(--color-black-elevation-1);
+    border: 1px solid var(--color-border-subtle);
+    box-sizing: unset;
+  }
 
+  .timelineButton >svg {
+    fill: var(--color-accent);
+  }
   
   .sidebar {
     display: block;
@@ -627,6 +633,9 @@ a:hover,
 
     max-height: 85vh;
     overflow: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 
     transform: translateY(120%);
     opacity: 0;
@@ -635,9 +644,14 @@ a:hover,
 
   }
 
-  html.timeline-open,
-body.timeline-open {
-  /* overflow: hidden; */
+  .timelineScroll {
+  max-height: none;     /* ❌ keine feste Höhe */
+  overflow: visible;    /* ❌ kein eigenes scroll */
+}
+
+  html.timelineOpen,
+  body.timelineOpen {
+  overflow: hidden;
 }
 
 
@@ -662,7 +676,6 @@ body.timeline-open {
     opacity: 1;
     pointer-events: auto;
   }
-
 
 
   .menuIcon {
@@ -710,6 +723,6 @@ body.timeline-open {
 }
 
 /*Beta*/
-/* .navigation {
+.navigation {
   display: none;
-} */
+}
