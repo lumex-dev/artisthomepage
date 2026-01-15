@@ -622,6 +622,11 @@ a:hover,
   .aboutTextContainer h1 {
     text-align: center;
   }
+
+  .statsGrid {
+      grid-template-columns:  1fr;
+
+  }
   .aboutIcons {
     justify-content: center;
   }
