@@ -23,6 +23,7 @@ h3,
 .aboutName,
 .navigation li {
   font-family: "Zen Dots", sans-serif, sans-serif;
+  color: var(--color-text-main);
 }
 
 h1 {
@@ -507,6 +508,8 @@ a:hover,
   pointer-events: none;
 }
 
+
+
 .timeline-item {
   position: relative;
   padding: 18px 0 18px 16px;
@@ -564,12 +567,19 @@ a:hover,
   transform: scale(1.3);
 }
 
-.timeline-year {
+.timeline-year,
+.timeline-nextLabel {
   margin: 12px 0 6px 0;
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-black-elevation-56);
+}
+
+.timeline-nextLabel {
+
+  color: var(--color-accent); /* gleiche Farbe wie nextGig */
+  margin: 12px 0 0px 0;
 }
 
 /*Footer*/
@@ -629,7 +639,8 @@ a:hover,
   }
   
   .sidebar {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: fixed;
     /* left: 12px; */
     right: 12px;
@@ -652,6 +663,11 @@ a:hover,
     pointer-events: none;
     transition: transform 200ms ease, opacity 200ms ease;
 
+  }
+
+  .sidebar .sidebarHeader {
+    flex: 0 0 auto;
+    z-index: 2;
   }
 
   .timelineScroll {

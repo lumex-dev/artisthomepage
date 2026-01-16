@@ -18,6 +18,8 @@ function toggleTimeline() {
 function closeTimeline() {
     document.body.classList.remove("timelineOpen");
     timelineButton.classList.remove("open");
+    document.documentElement.classList.remove("timelineOpen"); // html auch sauber schließen
+
 }
 
 timelineButton.addEventListener("click", toggleTimeline);
@@ -159,9 +161,17 @@ function renderTimeline(rawItems, rootEl) {
     frag.appendChild(line);
 
     let lastPastYear = null;
+    let nextLabelInserted = false;
 
     data.forEach((gig) => {
         // Year label nur für Past, wenn neues Jahr beginnt (im Past-Block)
+        if (gig.kind === "next" && !nextLabelInserted) {
+            const nextEl = document.createElement("div");
+            nextEl.className = "timeline-nextLabel";
+            nextEl.textContent = "Next";
+            frag.appendChild(nextEl);
+            nextLabelInserted = true;
+        }
         if (gig.kind === "past") {
             const year = getYear(gig.date);
             if (year !== lastPastYear) {
