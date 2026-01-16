@@ -380,6 +380,16 @@ a:hover,
   gap: 12px;
   grid-template-columns: repeat(3,minmax(0, 1fr))
 }
+.projectShowcases > *{
+  min-width: 0;
+}
+
+.projectShowcases h3,
+.projectShowcases h2{
+  white-space: normal;
+  overflow-wrap: anywhere; /* bricht notfalls auch lange Wörter */
+  word-break: normal;
+}
 
 .projectImgContainer {
   max-width: 400px;
