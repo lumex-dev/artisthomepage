@@ -437,9 +437,11 @@ a:hover,
 .timelineBackdrop {
   display: none;
 }
-.timelineButton {
+.timelineButton,
+  .timelineCloseButton {
   display: none;
 }
+
 
 .timeline {
   position: relative;
