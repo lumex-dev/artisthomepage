@@ -2,6 +2,11 @@ const burger = document.querySelector(".menuIcon");
 const navList = document.querySelector(".navList");
 const timelineButton = document.getElementById("timelineButton")
 const backdrop = document.getElementById("timelineBackdrop");
+const timelineCloseButton = document.getElementById("timelineCloseButton");
+const panel = document.getElementById("mobileTimelinePanel");
+
+
+const timelineScroll = document.getElementById("timelineRoot");
 
 burger.addEventListener("click", () => {
     const isOpen = navList.classList.toggle("open");
@@ -10,9 +15,20 @@ burger.addEventListener("click", () => {
 
 
 function toggleTimeline() {
-    document.body.classList.toggle("timelineOpen");
-    timelineButton.classList.toggle("open");
-    document.documentElement.classList.toggle("timelineOpen"); // html
+    const isOpen = document.body.classList.toggle("timelineOpen");
+    timelineButton.classList.toggle("open", isOpen);
+    document.documentElement.classList.toggle("timelineOpen", isOpen); // html
+
+    if (isOpen && panel) {
+        requestAnimationFrame(() => {
+            panel.scrollTop = 0;
+        });
+    }
+    if (isOpen && timelineScroll) {
+        requestAnimationFrame(() => {
+            timelineScroll.scrollTop = 0;
+        });
+    }
 }
 
 function closeTimeline() {
@@ -28,6 +44,10 @@ backdrop.addEventListener("click", closeTimeline);
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeTimeline();
 });
+
+timelineCloseButton.addEventListener("click", closeTimeline);
+
+
 
 
 

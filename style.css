@@ -665,6 +665,34 @@ a:hover,
 
   }
 
+  .timelineCloseButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-accent-02);
+  border: 1px solid var(--color-border-subtle);
+  cursor: pointer;
+}
+
+.timelineCloseButton:hover {
+  transform: translateY(-1px);
+}
+
+.timelineCloseButton .icon {
+  width: 22px;
+  height: 22px;
+  fill: var(--color-accent);
+}
+
   .sidebar .sidebarHeader {
     flex: 0 0 auto;
     z-index: 2;
