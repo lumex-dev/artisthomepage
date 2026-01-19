@@ -53,9 +53,9 @@ timelineCloseButton.addEventListener("click", closeTimeline);
 
 // ====== 1) Daten: nur Datum + Ort/Titel + optional SoundCloud href ======
 const gigs = [
-    { date: "2025-10-01", title: "Time", href: "https://soundcloud.com/moritzminoa/moritz-minoa-time?in=moritzminoa/sets/own-tracks&si=519a63ec6b3d4b4eb72771e735dd0461&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" },
-    { date: "2025-10-01", title: "Awaken", href: "https://soundcloud.com/moritzminoa/moritz-minoa-awaken?in=moritzminoa/sets/own-tracks&si=ec07e267c6904db490d7d607da5d774a&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" },
-    { date: "2025-05-01", title: "Simultaneous Vibe", href: "https://soundcloud.com/moritzminoa/simultaneous-vibe-1?in=moritzminoa/sets/own-tracks&si=f8092f51eea341e882c894a0b071a9a2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" },
+    { date: "2025-10-01", title: "Time", href: "https://on.soundcloud.com/JVDrCksc0UmujuCisM" },
+    { date: "2025-10-01", title: "Awaken", href: "https://on.soundcloud.com/wXYEOKXcJOpfeQUwWG" },
+    { date: "2025-05-01", title: "Simultaneous Vibe", href: "https://on.soundcloud.com/mFXrK2n6O800WROt5p" },
     { date: "2026-09-26", title: "Private Hochzeit" },
     { date: "2026-06-13", title: "Private Hochzeit" },
     { date: "2026-02-07", title: "Palais, Munich" },
