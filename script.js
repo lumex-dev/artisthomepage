@@ -85,7 +85,7 @@ const gigs = [
     { date: "2026-09-26", title: "Private Hochzeit" },
     { date: "2026-06-13", title: "Private Hochzeit" },
     { date: "2026-02-07", title: "Palais, Munich" },
-    { date: "2026-01-24", title: "Korajo Winter Afterall, Munich" },
+    { date: "2026-01-24", title: "Korajo Winter Afterall, Munich", href: "https://on.soundcloud.com/hJ81qLCAuiDa4HB59m" },
     { date: "2026-01-23", title: "Zur Gruam, Munich" },
 
     { date: "2025-10-03", title: "Bahnwärther Thiel, Munich" },
