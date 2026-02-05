@@ -82,10 +82,9 @@ const gigs = [
     { date: "2025-10-01", title: "Time", href: "https://on.soundcloud.com/JVDrCksc0UmujuCisM" },
     { date: "2025-10-01", title: "Awaken", href: "https://on.soundcloud.com/wXYEOKXcJOpfeQUwWG" },
     { date: "2025-05-01", title: "Simultaneous Vibe", href: "https://on.soundcloud.com/mFXrK2n6O800WROt5p" },
-    { date: "2026-09-26", title: "Private Hochzeit" },
     { date: "2026-06-13", title: "Private Hochzeit" },
     { date: "2026-02-07", title: "Palais, Munich" },
-    { date: "2026-01-24", title: "Korajo Winter Afterall, Munich", href: "https://on.soundcloud.com/hJ81qLCAuiDa4HB59m" },
+    { date: "2026-01-24", title: "Korajo Winterglow, Munich", href: "https://on.soundcloud.com/sMaDOZXAGg8cTagBPi" },
     { date: "2026-01-23", title: "Zur Gruam, Munich" },
 
     { date: "2025-10-03", title: "Bahnwärther Thiel, Munich" },
