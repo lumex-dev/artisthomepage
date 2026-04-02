@@ -53,6 +53,8 @@ timelineCloseButton.addEventListener("click", closeTimeline);
 
 // ====== 1) Daten: nur Datum + Ort/Titel + optional SoundCloud href ======
 const gigs = [
+    { date: "2026-04-11", title: "Lieberscholli, Munich" },
+    { date: "2026-09-19", title: "Bahnwärther Thiel, Munich" },
     { date: "2024-04-05", title: "Korajo @ Natraj Temple, Munich", href: "https://on.soundcloud.com/yEYBvfha71IDlNchyt" },
     { date: "2024-07-04", title: "Südstadt, Munich" },
     { date: "2024-04-06", title: "Unterdeck, Munich" },
